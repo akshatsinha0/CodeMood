@@ -1,0 +1,97 @@
+{
+  "name": "codemood",
+  "displayName": "CodeMood",
+  "description": "Your code's emotional companion - see how your code feels through expressive emojis that react to bugs, errors, and code quality in real time",
+  "version": "0.0.1",
+  "publisher": "akshatsinha0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akshatsinha0/CodeMood.git"
+  },
+  "bugs": {
+    "url": "https://github.com/to_be_created_later/codemood-extension/issues"
+  },
+  "homepage": "https://codemood.to_be_designed_later.com",
+  "keywords": [
+    "code-quality",
+    "diagnostics",
+    "mood",
+    "emoji",
+    "developer-experience"
+  ],
+  "engines": {
+    "vscode": "^1.102.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codemood.showMoodPanel",
+        "title": "CodeMood: Show Mood Panel",
+        "category": "CodeMood"
+      },
+      {
+        "command": "codemood.hideMoodPanel",
+        "title": "CodeMood: Hide Mood Panel",
+        "category": "CodeMood"
+      },
+      {
+        "command": "codemood.toggleMoodPanel",
+        "title": "CodeMood: Toggle Mood Panel",
+        "category": "CodeMood"
+      },
+      {
+        "command": "codemood.refreshMood",
+        "title": "CodeMood: Refresh Current Mood",
+        "category": "CodeMood"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "codemood.toggleMoodPanel",
+        "key": "ctrl+shift+m",
+        "mac": "cmd+shift+m",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "clean": "rimraf dist out",
+    "build": "yarn run clean && yarn run compile",
+    "build:prod": "yarn run clean && webpack --mode production",
+    "package:vsix": "yarn run build:prod && vsce package",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.102.0",
+    "@typescript-eslint/eslint-plugin": "^8.39.0",
+    "@typescript-eslint/parser": "^8.39.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^3.6.0",
+    "eslint": "^9.32.0",
+    "rimraf": "^6.0.1",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.9.2",
+    "webpack": "^5.101.0",
+    "webpack-cli": "^6.0.1"
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
+}
