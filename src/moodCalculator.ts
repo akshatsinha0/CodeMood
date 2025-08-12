@@ -49,10 +49,22 @@ export class MoodCalculator {
         
         if (totalIssues === 0) {
             const qualityBonus = LanguageSupport.getQualityBonus(languageId);
+            
+            // Extra bonus for clean configuration files
+            if (LanguageSupport.isConfigurationLanguage(languageId)) {
+                return qualityBonus + 1;
+            }
+            
             return qualityBonus;
         }
         
         const diagnosticWeight = LanguageSupport.getDiagnosticWeight(languageId);
+        
+        // Configuration files are more sensitive to errors
+        if (LanguageSupport.isConfigurationLanguage(languageId)) {
+            return Math.round((1 - diagnosticWeight) * 1.5);
+        }
+        
         return Math.round((1 - diagnosticWeight) * 2);
     }
 

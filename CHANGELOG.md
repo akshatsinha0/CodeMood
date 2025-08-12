@@ -1,5 +1,27 @@
 # Change Log
 
+## [0.1.1] - August 2025
+
+YAML feature added with comprehensive configuration file support.
+
+### New Features
+- **YAML Support**: Full support for .yaml and .yml files
+- **Configuration Language Detection**: Enhanced handling for configuration files
+- **YAML-Specific Error Handling**: Improved detection of YAML syntax errors and indentation issues
+- **Configuration File Bonuses**: Extra quality bonuses for clean configuration files
+- **Enhanced Language Categories**: Added 'configuration' category for better language classification
+
+### Technical Improvements
+- YAML syntax error detection with specific error patterns
+- Configuration-sensitive mood calculation adjustments
+- Enhanced language support system with better categorization
+- Improved diagnostic processing for structured data files
+
+### Language Support Expansion
+- Added YAML (.yaml, .yml) to supported languages
+- Total supported languages increased to 17+
+- Better handling of configuration file characteristics
+
 ## [0.1.0] - August 2025
 
 New emotions added with expanded mood classification system.

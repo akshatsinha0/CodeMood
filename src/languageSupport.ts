@@ -115,6 +115,20 @@ export class LanguageSupport {
             fileExtensions: ['.kt', '.kts'],
             diagnosticWeight: 0.8,
             qualityBonus: 2
+        },
+        yaml: {
+            id: 'yaml',
+            displayName: 'YAML',
+            fileExtensions: ['.yaml', '.yml'],
+            diagnosticWeight: 0.9,
+            qualityBonus: 2
+        },
+        yml: {
+            id: 'yml',
+            displayName: 'YAML',
+            fileExtensions: ['.yml', '.yaml'],
+            diagnosticWeight: 0.9,
+            qualityBonus: 2
         }
     };
 
@@ -173,10 +187,15 @@ export class LanguageSupport {
         return ['python', 'ruby', 'php', 'perl', 'bash', 'powershell'].includes(languageId);
     }
 
-    public static getLanguageCategory(languageId: string): 'web' | 'system' | 'scripting' | 'application' | 'other' {
+    public static isConfigurationLanguage(languageId: string): boolean {
+        return ['yaml', 'yml', 'json', 'toml', 'ini', 'xml'].includes(languageId);
+    }
+
+    public static getLanguageCategory(languageId: string): 'web' | 'system' | 'scripting' | 'application' | 'configuration' | 'other' {
         if (this.isWebTechnology(languageId)) return 'web';
         if (this.isSystemLanguage(languageId)) return 'system';
         if (this.isScriptingLanguage(languageId)) return 'scripting';
+        if (this.isConfigurationLanguage(languageId)) return 'configuration';
         if (['java', 'csharp', 'kotlin', 'swift'].includes(languageId)) return 'application';
         return 'other';
     }
@@ -192,7 +211,9 @@ export class LanguageSupport {
             java: ['Follow naming conventions', 'Use proper exception handling', 'Write unit tests'],
             rust: ['Handle all Result types', 'Use clippy for linting', 'Follow ownership principles'],
             go: ['Use gofmt', 'Handle all errors', 'Write clear documentation'],
-            csharp: ['Use nullable reference types', 'Follow naming conventions', 'Use async/await properly']
+            csharp: ['Use nullable reference types', 'Follow naming conventions', 'Use async/await properly'],
+            yaml: ['Use consistent indentation', 'Validate syntax regularly', 'Keep structure simple and readable', 'Use meaningful key names'],
+            yml: ['Use consistent indentation', 'Validate syntax regularly', 'Keep structure simple and readable', 'Use meaningful key names']
         };
 
         return practices[languageId] || ['Follow language best practices', 'Write clean, readable code', 'Add appropriate comments'];

@@ -6,7 +6,7 @@ CodeMood is a VS Code extension that provides real-time visual feedback about yo
 
 - **Real-time Mood Analysis**: See your code's mood update as you type
 - **Emoji-based Feedback**: Intuitive facial expressions from 😭 (critical issues) to 🤩 (perfect code)
-- **Multi-language Support**: Works with JavaScript, TypeScript, Python, Java, C#, Rust, Go, and more
+- **Multi-language Support**: Works with JavaScript, TypeScript, Python, Java, C#, Rust, Go, YAML, and more
 - **Smart Scoring**: Advanced algorithm considers error severity, file size, and language-specific factors
 - **Performance Optimized**: Intelligent caching and debouncing for smooth experience
 - **Command Palette Integration**: Easy access through VS Code commands
@@ -58,6 +58,7 @@ The mood panel will display:
 - Ruby (.rb)
 - Swift (.swift)
 - Kotlin (.kt, .kts)
+- YAML (.yaml, .yml)
 
 ## Commands
 
@@ -90,7 +91,7 @@ This extension contributes no additional settings. It works out of the box with 
 
 Initial release of CodeMood:
 - Real-time code mood analysis
-- Support for 15+ programming languages
+- Support for 17+ programming and configuration languages
 - Emoji-based visual feedback
 - Performance optimized with caching
 - Command palette integration

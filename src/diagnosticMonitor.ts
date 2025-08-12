@@ -69,6 +69,12 @@ export class DiagnosticMonitor {
         };
 
         for (const diagnostic of diagnostics) {
+            // YAML syntax errors are often critical for configuration files
+            if (this.isYamlSyntaxError(diagnostic)) {
+                count.errors++;
+                continue;
+            }
+
             switch (diagnostic.severity) {
                 case vscode.DiagnosticSeverity.Error:
                     count.errors++;
@@ -88,6 +94,21 @@ export class DiagnosticMonitor {
         }
 
         return count;
+    }
+
+    private isYamlSyntaxError(diagnostic: vscode.Diagnostic): boolean {
+        const message = diagnostic.message.toLowerCase();
+        const yamlErrorKeywords = [
+            'yaml syntax error',
+            'invalid yaml',
+            'indentation error',
+            'mapping values are not allowed',
+            'could not find expected',
+            'found character that cannot start',
+            'block sequence entries are not allowed'
+        ];
+        
+        return yamlErrorKeywords.some(keyword => message.includes(keyword));
     }
 
     public getCurrentFileDiagnostics(): { uri: vscode.Uri; diagnostics: vscode.Diagnostic[] } | null {

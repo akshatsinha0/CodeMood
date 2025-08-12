@@ -171,7 +171,9 @@ export const SUPPORTED_LANGUAGES = [
     'php',
     'ruby',
     'swift',
-    'kotlin'
+    'kotlin',
+    'yaml',
+    'yml'
 ] as const;
 
 export const DEBOUNCE_DELAY = 500;
