@@ -2,7 +2,7 @@
   "name": "codemood",
   "displayName": "CodeMood",
   "description": "Your code's emotional companion - see how your code feels through expressive emojis that react to bugs, errors, and code quality in real time",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "publisher": "akshatsinha0",
   "license": "MIT",
   "repository": {

@@ -1,10 +1,17 @@
 export enum MoodCategory {
+    EUPHORIC = 'euphoric',
     ECSTATIC = 'ecstatic',
+    PROUD = 'proud',
     HAPPY = 'happy',
+    CONTENT = 'content',
     NEUTRAL = 'neutral',
+    THOUGHTFUL = 'thoughtful',
     CONCERNED = 'concerned',
+    ANXIOUS = 'anxious',
     SAD = 'sad',
-    DEVASTATED = 'devastated'
+    FRUSTRATED = 'frustrated',
+    DEVASTATED = 'devastated',
+    PANICKED = 'panicked'
 }
 
 export interface DiagnosticCount {

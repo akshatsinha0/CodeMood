@@ -57,35 +57,63 @@ export class MoodCalculator {
     }
 
     private determineMoodCategory(score: number): MoodCategory {
-        if (score >= MOOD_THRESHOLDS.ECSTATIC) {
+        if (score >= MOOD_THRESHOLDS.EUPHORIC) {
+            return MoodCategory.EUPHORIC;
+        } else if (score >= MOOD_THRESHOLDS.ECSTATIC) {
             return MoodCategory.ECSTATIC;
+        } else if (score >= MOOD_THRESHOLDS.PROUD) {
+            return MoodCategory.PROUD;
         } else if (score >= MOOD_THRESHOLDS.HAPPY) {
             return MoodCategory.HAPPY;
+        } else if (score >= MOOD_THRESHOLDS.CONTENT) {
+            return MoodCategory.CONTENT;
         } else if (score >= MOOD_THRESHOLDS.NEUTRAL) {
             return MoodCategory.NEUTRAL;
+        } else if (score >= MOOD_THRESHOLDS.THOUGHTFUL) {
+            return MoodCategory.THOUGHTFUL;
         } else if (score >= MOOD_THRESHOLDS.CONCERNED) {
             return MoodCategory.CONCERNED;
+        } else if (score >= MOOD_THRESHOLDS.ANXIOUS) {
+            return MoodCategory.ANXIOUS;
         } else if (score >= MOOD_THRESHOLDS.SAD) {
             return MoodCategory.SAD;
-        } else {
+        } else if (score >= MOOD_THRESHOLDS.FRUSTRATED) {
+            return MoodCategory.FRUSTRATED;
+        } else if (score >= MOOD_THRESHOLDS.DEVASTATED) {
             return MoodCategory.DEVASTATED;
+        } else {
+            return MoodCategory.PANICKED;
         }
     }
 
     public getMoodDescription(category: MoodCategory): string {
         switch (category) {
+            case MoodCategory.EUPHORIC:
+                return 'Absolutely flawless code - a masterpiece!';
             case MoodCategory.ECSTATIC:
-                return 'Excellent! Your code is pristine and error-free.';
+                return 'Exceptional code quality - celebration time!';
+            case MoodCategory.PROUD:
+                return 'Really solid code - you should be proud';
             case MoodCategory.HAPPY:
-                return 'Great job! Your code quality is looking good.';
+                return 'Good code quality - things are going well';
+            case MoodCategory.CONTENT:
+                return 'Decent code with minor room for improvement';
             case MoodCategory.NEUTRAL:
-                return 'Not bad. There are some minor issues to address.';
+                return 'Average code quality - could use some attention';
+            case MoodCategory.THOUGHTFUL:
+                return 'Code needs some thinking and refactoring';
             case MoodCategory.CONCERNED:
-                return 'Hmm, several issues need your attention.';
+                return 'Several issues detected - needs attention';
+            case MoodCategory.ANXIOUS:
+                return 'Multiple problems causing anxiety - time to debug';
             case MoodCategory.SAD:
-                return 'Ouch! Many problems detected in your code.';
+                return 'Many issues detected - code needs serious help';
+            case MoodCategory.FRUSTRATED:
+                return 'Frustrating errors everywhere - deep debugging needed';
             case MoodCategory.DEVASTATED:
-                return 'Critical issues found! Time for some serious debugging.';
+                return 'Critical issues everywhere - major refactoring required';
+            case MoodCategory.PANICKED:
+                return 'Code is in complete chaos - emergency intervention needed!';
             default:
                 return 'Code analysis in progress...';
         }

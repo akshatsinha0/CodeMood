@@ -1,5 +1,29 @@
 # Change Log
 
+## [0.1.0] - August 2025
+
+New emotions added with expanded mood classification system.
+
+### New Mood Categories
+- 😍 Euphoric (98-100 points) - Absolutely flawless code - a masterpiece!
+- 🥳 Ecstatic (90-97 points) - Exceptional code quality - celebration time!
+- 😌 Proud (80-89 points) - Really solid code - you should be proud
+- 😊 Happy (70-79 points) - Good code quality - things are going well
+- 😌 Content (60-69 points) - Decent code with minor room for improvement
+- 😐 Neutral (50-59 points) - Average code quality - could use some attention
+- 🤔 Thoughtful (40-49 points) - Code needs some thinking and refactoring
+- 😟 Concerned (30-39 points) - Several issues detected - needs attention
+- 😰 Anxious (20-29 points) - Multiple problems causing anxiety - time to debug
+- 😢 Sad (15-19 points) - Many issues detected - code needs serious help
+- 😤 Frustrated (10-14 points) - Frustrating errors everywhere - deep debugging needed
+- 😭 Devastated (5-9 points) - Critical issues everywhere - major refactoring required
+- 😱 Panicked (0-4 points) - Code is in complete chaos - emergency intervention needed!
+
+### Technical Improvements
+- Enhanced mood calculation algorithm with finer granularity
+- More precise emotional feedback based on code quality
+- Better user experience with detailed mood descriptions
+
 ## [0.0.2] - August 2025
 
 Image logo updated.
