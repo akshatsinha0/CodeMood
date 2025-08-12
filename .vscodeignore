@@ -28,3 +28,4 @@ webpack.config.js
 tsconfig.json
 eslint.config.mjs
 .vscode-test.mjs
+check-logo.ps1

@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.0.2] - August 2025
+
+Image logo updated.
+
 ## [0.0.1] - August 2025
 
 Initial release of CodeMood extension.
